@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contrail-render"
+dynamic = ["version"]
+description = "Physically based spectral rendering of aircraft contrails (Mie scattering, sky model, Monte Carlo path tracing) from CGNS ice-crystal fields, on CPU or GPU"
+readme = "README.md"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "taichi==1.7.4",
+    "numpy",
+    "scipy",
+    "h5py",
+    "pillow",
+    "tifffile",
+]
+
+[project.optional-dependencies]
+test = ["pytest", "miepython"]
+
+[project.scripts]
+contrail-render = "contrail_render.cli_render:main"
+contrail-viewer = "contrail_render.cli_viewer:main"
+contrail-mie = "contrail_render.cli_mie:main"
+
+[tool.setuptools]
+packages = ["contrail_render"]
+
+[tool.setuptools.dynamic]
+version = {attr = "contrail_render.__version__"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

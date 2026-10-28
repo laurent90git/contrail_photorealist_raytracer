@@ -1,0 +1,9 @@
+# Prefer:  pip install -e .[test]   (see pyproject.toml).  Python 3.9 - 3.12.
+taichi==1.7.4
+numpy
+scipy
+h5py
+pillow
+tifffile
+miepython   # tests only
+pytest      # tests only

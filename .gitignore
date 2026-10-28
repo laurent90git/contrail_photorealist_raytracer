@@ -1,0 +1,12 @@
+__pycache__/
+*.egg-info/
+build/
+renders/
+views/
+activate.sh
+cache/
+.pytest_cache/
+# input material not redistributed (copyrighted papers, Unsplash photos, original request)
+ressources/*
+!ressources/contrail.cgns
+request.md
